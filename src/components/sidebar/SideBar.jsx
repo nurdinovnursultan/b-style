@@ -25,6 +25,7 @@ const SideBar = () => {
                     </IconButton>
                 </ThemeProvider>
             </div>
+            
             <ul>
                 {
                     sidebar.map((item, index) => <li key={index}

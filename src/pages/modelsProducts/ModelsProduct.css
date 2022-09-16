@@ -1,0 +1,70 @@
+.card {
+  background-color: #E9EEF4;
+  width: 100%;
+  height: 100vh;
+  padding-left: 80px;
+  padding-top: 25px;
+  padding-right: 20px;
+}
+
+.card__header {
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  font-style: normal;
+}
+
+.card__button {
+  background-color: #326789;
+  color: #fff;
+  height: 40px;
+  width: 150px;
+  left: 1270px;
+  top: 137px;
+  border-radius: 5px;
+  border: none;
+}
+
+.card__body {
+  margin-top: 48px;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.card__table {
+  width: 700px;
+  max-height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table__th, .table__tr {
+  text-align: start;
+  height: 40px;
+  background-color: #fff;
+}
+
+.table__th {
+  height: 40px;
+}
+
+.table__tr:nth-child(2n) {
+  background-color: #F2F2F2;
+}
+
+.table__tr-none {
+  display: none;
+}
+
+.table__td, .table__th {
+  padding-left: 10px;
+  padding-right: 10px;
+}/*# sourceMappingURL=ModelsProduct.css.map */

@@ -25,7 +25,8 @@ function ProductPage() {
               <th className="th">Упаковка</th>
               <th className="th">Количество пар</th>
               <th className="th">В мешках</th>
-              <th className="th">Дата</th>
+              <th className="th">В мешках</th> 
+              <th className="th">Датa</th>
             </tr>
             <tr>
             <td>34,5</td>

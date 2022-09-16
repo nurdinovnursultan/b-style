@@ -3,6 +3,9 @@
 @import url('./components/header/Header.css');
 @import url('./pages/loginpage/LoginPage.css');
 @import url('./pages/productpage/ProductPage.css');
+@import url('./pages/modelsProducts/ModelsProduct.css');
+
+
 * {
   margin: 0;
   padding: 0;

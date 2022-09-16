@@ -1,6 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+    const [user, setUser] = useState({})
+    const admin = {
+        username: 'admin',
+        password: '1234'
+    }
+
+    const login = (e) => {
+        let newUser = {
+            ...user,
+            [e.target.name]: e.target.value
+        }
+        setUser(newUser)
+    }
+
+    const navigate = useNavigate()
+
+    const checkUser = () => {
+        if (user.username === admin.username && user.password === admin.password) {
+            navigate('/product')
+        } else {
+            alert('Please try again!')
+        }
+    }
+
     return (
         <div className='login-page'>
             <div className="login-body">
@@ -10,11 +35,9 @@ const LoginPage = () => {
                     <p>Пожалуйста, введите свои учетные данные</p>
                 </div>
                 <div className="login-body-form">
-                    <form>
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
-                        <button>SIGN IN</button>
-                    </form>
+                    <input type="text" name="username" placeholder="Username" onChange={login} />
+                    <input type="password" name="password" placeholder="Password" onChange={login} />
+                    <button onClick={() => checkUser()}>SIGN IN</button>
                 </div>
             </div>
         </div>

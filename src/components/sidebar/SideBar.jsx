@@ -2,7 +2,6 @@ import { createTheme, IconButton, ThemeProvider } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-
 const theme = createTheme({
     palette: {
         warning: {
@@ -25,7 +24,6 @@ const SideBar = () => {
                     </IconButton>
                 </ThemeProvider>
             </div>
-            
             <ul>
                 {
                     sidebar.map((item, index) => <li key={index}

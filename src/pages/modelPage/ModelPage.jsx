@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "../../components/pagination/Pagination";
 
 const ModelPage = () => {
 
@@ -66,6 +67,7 @@ const ModelPage = () => {
               })
             }
           </tbody>
+        <Pagination total={product.length} perPage={2} />
         </table>
       </section>
     </article>

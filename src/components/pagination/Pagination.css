@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 15px;
+}
+.pagination .current-btn {
+  width: 44px;
+  height: 44px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #326789;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.pagination .default-btn {
+  width: 44px;
+  height: 44px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #326789;
+  font-size: 16px;
+  font-weight: 500;
+}/*# sourceMappingURL=Pagination.css.map */

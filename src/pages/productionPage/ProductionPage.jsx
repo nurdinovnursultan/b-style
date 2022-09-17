@@ -5,37 +5,86 @@ import Pagination from "../../components/pagination/Pagination";
 const ProductionPage = () => {
   const totalCount = 50
   const totalPerPage = 10
+  const product = [
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+  ]
   return (
     <div>
       <div className="heder">
         <div className="block1">
           <div>
-            <h1 className="h1">Выработка</h1>
+         
+            <h1 className="h1 card__title">Выработка</h1>
             <input className="input_block1" type="text" />
             <SearchIcon className="BiSearch" />
           </div>
           <button className="button_block1">Создать</button>
         </div>
         <div className="block2">
-          <table className="block_menu">
-            <tr>
-              <th className="th">Модель</th>
-              <th className="th">Вид моделей</th>
-              <th className="th">Упаковка</th>
-              <th className="th">Количество пар</th>
-              <th className="th">В мешках</th>
-              <th className="th">Датa</th>
-            </tr>
-            <tr>
-              <td>34,5</td>
-              <td>34,5</td>
-              <td>3,5</td>
-              <td>36</td>
-              <td>23</td>
-              <td>34,5</td>
-            </tr>
-          </table>
-
+         
+          <section className="card__body">
+        <table className="card__table table">
+          <thead>
+          <th className="table__th">Модель</th>
+              <th className="table__th">Вид моделей</th>
+              <th className="table__th">Упаковка</th>
+              <th className="table__th">Количество пар</th>
+              <th className="table__th">В мешках</th>
+              <th className="table__th">Датa</th>
+          </thead>
+          <tbody className="table__body">
+            <tr className="table__tr-none"></tr>
+            {
+              product.map(item => {
+                return(
+                  <tr className="table__tr" key={item.id}>
+                    <td className="table__td">{item.model}</td>
+                    <td className="table__td">{item.data}</td>
+                    <td className="table__td">{item.data}</td>
+                    <td className="table__td">{item.data}</td>
+                    <td className="table__td">{item.data}</td>
+                    <td className="table__td">{item.data}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
+      </section>
         </div>
         <div className="block3">
           <Pagination total={totalCount} perPage={totalPerPage} />

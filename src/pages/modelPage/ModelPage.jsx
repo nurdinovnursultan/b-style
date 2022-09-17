@@ -2,7 +2,46 @@ import React from "react";
 
 const ModelPage = () => {
 
-  return (
+  const product = [
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+    {
+      model: "zzzz",
+      data: "11.1.1.",
+      id: Math.random(),
+    },
+  ]
+
+  return(
+    <>
     <article className="card">
       <section className="card__header">
         <h1 className="card__title">Продукты</h1>
@@ -16,38 +55,21 @@ const ModelPage = () => {
           </thead>
           <tbody className="table__body">
             <tr className="table__tr-none"></tr>
-            <tr className="table__tr">
-              <td className="table__td">xd3000</td>
-              <td className="table__td">3.01.999</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xd3000</td>
-              <td className="table__td">3.01.999</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xd3000</td>
-              <td className="table__td">3.01.999</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xd3000</td>
-              <td className="table__td">3.01.999</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xd3000</td>
-              <td className="table__td">3.01.999</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xffff</td>
-              <td className="table__td">3fffff</td>
-            </tr>
-            <tr className="table__tr">
-              <td className="table__td">xffff</td>
-              <td className="table__td">3fffff</td>
-            </tr>
+            {
+              product.map(item => {
+                return(
+                  <tr className="table__tr" key={item.id}>
+                    <td className="table__td">{item.model}</td>
+                    <td className="table__td">{item.data}</td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
         </table>
       </section>
     </article>
+    </>
   )
 }
 

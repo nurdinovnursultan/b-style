@@ -1,8 +1,8 @@
 import React from "react";
 
-const ModelsProducts = () => {
+const ModelPage = () => {
 
-  return(
+  return (
     <article className="card">
       <section className="card__header">
         <h1 className="card__title">Продукты</h1>
@@ -51,4 +51,4 @@ const ModelsProducts = () => {
   )
 }
 
-export default ModelsProducts;
+export default ModelPage;

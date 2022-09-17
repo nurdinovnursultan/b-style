@@ -2,8 +2,9 @@
 @import url('./components/sidebar/SideBar.css');
 @import url('./components/header/Header.css');
 @import url('./pages/loginpage/LoginPage.css');
-@import url('./pages/productpage/ProductPage.css');
-@import url('./pages/modelsProducts/ModelsProduct.css');
+@import url('./pages/productionPage/ProductPage.css');
+@import url('./pages/modelPage/ModelsProduct.css');
+@import url('./components/pagination/Pagination.css');
 
 
 * {
@@ -12,4 +13,10 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 
+
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }

@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../../components/header/Header";
-import SideBar from "../../components/sidebar/SideBar";
 import SearchIcon from '@mui/icons-material/Search';
+import Pagination from "../../components/pagination/Pagination";
 
-function ProductPage() {
+const ProductionPage = () => {
+  const totalCount = 50
+  const totalPerPage = 10
   return (
     <div>
-      <Header />
-      <SideBar />
       <div className="heder">
         <div className="block1">
           <div>
@@ -18,7 +17,7 @@ function ProductPage() {
           <button className="button_block1">Создать</button>
         </div>
         <div className="block2">
-          <table   className="block_menu">
+          <table className="block_menu">
             <tr>
               <th className="th">Модель</th>
               <th className="th">Вид моделей</th>
@@ -28,7 +27,7 @@ function ProductPage() {
               <th className="th">Датa</th>
             </tr>
             <tr>
-            <td>34,5</td>
+              <td>34,5</td>
               <td>34,5</td>
               <td>3,5</td>
               <td>36</td>
@@ -36,22 +35,14 @@ function ProductPage() {
               <td>34,5</td>
             </tr>
           </table>
-        
+
         </div>
         <div className="block3">
-          <button className="button3">
-          1
-          </button>
-          <button className="button3">
-          2
-          </button>
-          <button className="button3">
-          3
-          </button>
+          <Pagination total={totalCount} perPage={totalPerPage} />
         </div>
       </div>
     </div>
   );
 }
 
-export default ProductPage;
+export default ProductionPage;

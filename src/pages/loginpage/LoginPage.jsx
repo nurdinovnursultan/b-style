@@ -20,7 +20,7 @@ const LoginPage = () => {
 
     const checkUser = () => {
         if (user.username === admin.username && user.password === admin.password) {
-            navigate('/product')
+            navigate('/production')
         } else {
             alert('Please try again!')
         }

@@ -1,4 +1,6 @@
 import React from "react";
+import Pagination from "../../components/pagination/Pagination";
+import EastIcon from '@mui/icons-material/East';  
 
 const ModelPage = () => {
 
@@ -61,11 +63,13 @@ const ModelPage = () => {
                   <tr className="table__tr" key={item.id}>
                     <td className="table__td">{item.model}</td>
                     <td className="table__td">{item.data}</td>
+                    <td><EastIcon color='primary' /></td>
                   </tr>
                 )
               })
             }
           </tbody>
+        <Pagination total={product.length} perPage={2} />
         </table>
       </section>
     </article>

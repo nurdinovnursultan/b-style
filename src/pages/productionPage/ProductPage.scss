@@ -1,0 +1,78 @@
+.heder {
+  width: 70%;
+  height: 650px;
+  border: solid 1px black;
+  background: #f5f5f5;
+  margin-left: 400px;
+  margin-top: 100px;
+  position: absolute;
+
+  .block1 {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .button_block1 {
+      width: 150px;
+      border-radius: 5px;
+      height: 40px;
+      border: none;
+      background-color: #326789;
+      color: white;
+    }
+
+    .input_block1 {
+      width: 500px;
+      height: 40px;
+      margin-top: 28px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .BiSearch {
+      margin-left: -35px;
+      font-size: 35px;
+      margin-bottom: -15px;
+      opacity: 0.7;
+      position: relative;
+    }
+  }
+  .block2 {
+    width: 95%;
+    height: 400px;
+    background-color: white;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    table,
+    tr,
+    td {
+      border-spacing: 40px 10px;
+      margin-top: 10px;
+    }
+    .block_menu {
+      justify-content: space-around;
+      top: 10px;
+    }
+  }
+  .block3 {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+   margin-right: 20px;
+   padding-top: 30px;
+    .button3 {
+      width: 40px;
+      height: 40px;
+      border: none;
+    border-radius: 3px;
+    &:active{
+background-color: #326789;
+    }
+    }
+  }
+}
+
+.h1 {
+  font-size: 30px;
+}

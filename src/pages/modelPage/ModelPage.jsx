@@ -1,10 +1,6 @@
 import React from "react";
-import Header from '../../components/header/Header';
-import SideBar from '../../components/sidebar/SideBar';
 
-
-
-const ModelsProducts = () => {
+const ModelPage = () => {
 
   const product = [
     {
@@ -46,8 +42,6 @@ const ModelsProducts = () => {
 
   return(
     <>
-    <Header />
-    <SideBar />
     <article className="card">
       <section className="card__header">
         <h1 className="card__title">Продукты</h1>
@@ -79,4 +73,4 @@ const ModelsProducts = () => {
   )
 }
 
-export default ModelsProducts;
+export default ModelPage;

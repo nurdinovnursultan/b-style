@@ -1,7 +1,6 @@
 .card {
   background-color: #E9EEF4 ;
   max-width: 1600px;
-  // max-width: 1180px;
   height: 100vh;
   padding-left: 80px;
   padding-top: 100px;
@@ -13,13 +12,12 @@
 }
 
 .card__header {
-  width: 700px;
+  max-width: 100%;
+  min-width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
 .card__title {
   font-family: 'Open Sans';
   font-weight: 700;
@@ -46,7 +44,8 @@
 }
 
 .card__table {
-  width: 700px;
+  max-width: 100%;
+  min-width: 1000px;
   max-height: 400px;
   border-radius: 10px;
   overflow: hidden;

@@ -61,6 +61,7 @@ const SideBar = () => {
                     </IconButton>
                 </ThemeProvider>
             </div>
+            <ul>
             <div className='side-bar-links'>
                 {
                     sidebar.map((item, index) => <Link to={item.path} key={index}
@@ -73,6 +74,7 @@ const SideBar = () => {
                     </Link>)
                 }
             </div>
+            </ul>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import Pagination from "../../components/pagination/Pagination";
 const ProductionPage = () => {
   const totalCount = 50
   const totalPerPage = 10
+
   return (
     <div>
       <div className="heder">

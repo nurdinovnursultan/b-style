@@ -41,7 +41,7 @@ const ProductionPage = () => {
       data: "11.1.1.",
       id: Math.random(),
     },
-  ];
+ 
   return (
     <div>
       <div className="heder">

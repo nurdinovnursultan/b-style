@@ -8,7 +8,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PeopleIcon from '@mui/icons-material/People';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -49,7 +49,8 @@ const SideBar = () => {
         }
     ]
 
-    const [current, setCurrent] = useState(0)
+    const location = useLocation()
+    const [current, setCurrent] = useState(location.pathname)
 
     return (
         <div className={sideBar ? "side-bar" : "side-bar-close"}>
@@ -64,8 +65,8 @@ const SideBar = () => {
             <div className='side-bar-links'>
                 {
                     sidebar.map((item, index) => <Link to={item.path} key={index}
-                        className={current === index ? 'current-link' : 'default-link'}
-                        onClick={() => setCurrent(index)}>
+                        className={current === item.path ? 'current-link' : 'default-link'}
+                        onClick={() => setCurrent(item.path)}>
                         {
                             sideBar ? (<div className="link-icons">{item.icon}<p>{item.name}</p></div>) :
                                 (<div className="link-icons">{item.icon}</div>)

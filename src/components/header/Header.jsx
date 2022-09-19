@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ status }) => {
     return (
-        <div className='header'>
-            <h1>Система учёта</h1>
-            <div className="header-avatar"></div>
+        <div className={status ? 'header' : 'header__move'}>
+            <div className="header__body">
+                <h1>Фабрика обуви</h1>
+                <div className="header__avatar"></div>
+            </div>
         </div>
     );
 };

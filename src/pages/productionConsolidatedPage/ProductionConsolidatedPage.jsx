@@ -46,18 +46,27 @@ const ProductionConsolidatedPage = () => {
         <div className="heder">
         <div className="input_date">
           <div>
-          <p>Дата начала</p>
-          <input className="input" type="date" id="start" name="trip-start"
-     
-     min="2018-01-01" max="202222-12-31"/>
+            <p className="input_date_p">Дата начала</p>
+            <input
+              className="input"
+              type="date"
+              id="start"
+              name="trip-start"
+              min="2018-01-01"
+              max="202222-12-31"
+            />
           </div>
-      <div>
-      <p>Дата окончанияp</p>
-      <input className="input" type="date" id="start" name="trip-start"
-     
-     min="2018-01-01" max="202222-12-31"/>
-      </div>
-     
+          <div>
+            <p className="input_date_p">Дата окончанияp</p>
+            <input
+              className="input"
+              type="date"
+              id="start"
+              name="trip-start"
+              min="2018-01-01"
+              max="202222-12-31"
+            />
+          </div>
         </div>
        
        

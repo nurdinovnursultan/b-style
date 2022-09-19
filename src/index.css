@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('./components/sidebar/SideBar.css');
 @import url('./components/header/Header.css');
-@import url('./pages/loginpage/LoginPage.css');
+@import url('./pages/loginPage/LoginPage.css');
 @import url('./pages/productionPage/ProductPage.css');
 @import url('./pages/modelPage/ModelsProduct.css');
 @import url('./components/pagination/Pagination.css');

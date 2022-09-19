@@ -48,7 +48,7 @@ const ProductionPage = () => {
         <div className="block1">
           <div>
             <h1 className="h1 card__title">Выработка</h1>
-            <input className="input_block1" type="text" />
+            <input className="input_block1" property="" type="text" />
             <SearchIcon className="BiSearch" />
           </div>
           <button className="button_block1">Создать</button>
@@ -61,6 +61,7 @@ const ProductionPage = () => {
               type="date"
               id="start"
               name="trip-start"
+              
               min="2018-01-01"
               max="202222-12-31"
             />

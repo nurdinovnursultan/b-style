@@ -1,4 +1,6 @@
 import React from 'react';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const SemiFinishedTable = ({ data }) => {
     const getTotalRest = () => {
@@ -27,11 +29,12 @@ const SemiFinishedTable = ({ data }) => {
                             <td>{item.country}</td>
                             <td>{item.date}</td>
                             <td>{item.quantity}</td>
+                            <td><EditIcon /><DeleteIcon /></td>
                         </tr>)) : null
                 }
                 <tr>
-                    <th>Итого</th>
-                    <th>{data ? getTotalRest() : 0}</th>
+                    <td colSpan="4" align="right">Итого</td>
+                    <td>{data ? getTotalRest() : 0}</td>
                 </tr>
             </tbody>
         </table>

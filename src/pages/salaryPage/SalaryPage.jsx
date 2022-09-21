@@ -1,83 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Pagination from "../../components/pagination/Pagination";
+import SalaryTable from '../../components/salaryTable/SalaryTable';
+import { getTabelWorkers } from '../../redux/actions/staffAction';
 
 const SalaryPage = () => {
-    const totalCount = 50
-    const totalPerPage = 10
-    const product = [
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-      {
-        name: "ernis",
-        salary: "11.1.1.",
-        id: Math.random(),
-      },
-    ]
-    return (
-       <>
-        <div className="heder">
-      
-        
-        <div className="block2">
-         
-          <section>
-        <table className="card__table table">
-          <thead>
-          <th className="table__th">name</th>
-             
-              <th className="table__th">salary</th>
-          </thead>
-          <tbody className="table__body">
-            <tr className="table__tr-none"></tr>
-            {
-              product.map(item => {
-                return(
-                  <tr className="table__tr" key={item.id}>
-                    <td className="table__td">{item.name}</td>
-                    <td className="table__td">{item.salary}</td>
-                   
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
-      </section>
-        </div>
-        <div className="block3">
-          <Pagination total={totalCount} perPage={totalPerPage} />
-        </div>
+  const dispatch = useDispatch()
+  const salary = useSelector(state => {
+    const { workersReducer } = state
+    return workersReducer.tabelWorkers
+  })
+
+  useEffect(() => {
+    dispatch(getTabelWorkers())
+  }, [])
+
+  return (
+    <div className="container">
+      <div className="content__header">
+        <h1 className="headers">Табель сотрудников</h1>
+        <button>Добавить</button>
       </div>
-       </>
-    );
+      <div className="content__body">
+        <SalaryTable data={salary.results} />
+        <Pagination total={salary.count} perPage={10} />
+      </div>
+    </div>
+  );
 };
 
 export default SalaryPage;

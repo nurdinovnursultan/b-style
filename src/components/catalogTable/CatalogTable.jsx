@@ -2,7 +2,6 @@ import React from 'react';
 import { getCatalogId } from '../../redux/actions/productionAction';
 import { useDispatch, useSelector } from 'react-redux';
 
-
 const CatalogTable = ({ data , setShow, setEdit}) => {
 
     const dispatch = useDispatch()

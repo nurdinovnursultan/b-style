@@ -8,6 +8,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PeopleIcon from '@mui/icons-material/People';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useLocation } from 'react-router-dom';
 
 const theme = createTheme({
@@ -44,6 +45,10 @@ const SideBar = ({ status, setSidebar }) => {
             name: "Зарплата",
             path: "/salary",
             icon: <AttachMoneyIcon fontSize="large" />
+        }, {
+            name: "Журнал продаж",
+            path: "/sales",
+            icon: <ShoppingCartIcon fontSize="large" />
         }
     ]
 

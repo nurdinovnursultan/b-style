@@ -1,8 +1,9 @@
-import { GET_TABEL_WORKERS, GET_WORKERS } from "../types"
+import { GET_DAILY_DIARY, GET_TABEL_WORKERS, GET_WORKERS } from "../types"
 
 const initialState = {
     workers: {},
-    tabelWorkers: {}
+    tabelWorkers: {},
+    dailyDiary: {}
 }
 
 export const workersReducer = (state = initialState, action) => {
@@ -11,6 +12,8 @@ export const workersReducer = (state = initialState, action) => {
             return { ...state, workers: action.payload }
         case GET_TABEL_WORKERS:
             return { ...state, tabelWorkers: action.payload }
+        case GET_DAILY_DIARY:
+            return { ...state, dailyDiary: action.payload }
         default:
             return state
     }

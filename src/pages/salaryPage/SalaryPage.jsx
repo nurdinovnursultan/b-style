@@ -4,7 +4,7 @@ import Pagination from "../../components/pagination/Pagination";
 import SalaryTable from '../../components/salaryTable/SalaryTable';
 import { getTabelWorkers } from '../../redux/actions/staffAction';
 
-const SalaryPage = () => {
+const SalaryPage = ({ status }) => {
   const dispatch = useDispatch()
   const salary = useSelector(state => {
     const { workersReducer } = state
@@ -16,7 +16,7 @@ const SalaryPage = () => {
   }, [])
 
   return (
-    <div className="container">
+    <div className={status ? "container" : "container__move"}>
       <div className="content__header">
         <h1 className="headers">Табель сотрудников</h1>
         <button>Добавить</button>

@@ -3,38 +3,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import CatalogTable from '../../components/catalogTable/CatalogTable';
 import Pagination from '../../components/pagination/Pagination';
 import { getCatalog } from '../../redux/actions/productionAction';
-import Modal from './catalogModal';
+import Modal from '../../components/modal/Modal';
+import { useLocation } from 'react-router-dom';
 
 const CatalogPage = ({ status }) => {
-  const [ show, setShow] = useState(false);
-  const [edit, setEdit] = useState(true)
-
-
   const dispatch = useDispatch()
   const catalog = useSelector(state => {
     const { productionReducer } = state
     return productionReducer.catalog
   })
 
-  const on = () => {
-    setShow(true); setEdit(true)
-  }
-
   useEffect(() => {
     dispatch(getCatalog())
   }, [])
+
+  const [modal, setModal] = useState(false);
+  const location = useLocation()
 
   return (
     <div className={status ? "container" : "container__move"}>
       <div className="content__header">
         <h1 className="headers">Каталог продукции</h1>
-        <button onClick={() => {on()}}>Добавить</button>
+        <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <CatalogTable edit={edit} setEdit={setEdit} setShow={setShow} data={catalog.results} />
+        <CatalogTable data={catalog.results} />
         <Pagination total={catalog.count} perPage={10} />
       </div>
-      <Modal show={show} setShow={setShow} edit={edit} setEdit={setEdit}/>
+      {modal ? (<Modal close={setModal} path={location.pathname} />) : null}
     </div>
   )
 

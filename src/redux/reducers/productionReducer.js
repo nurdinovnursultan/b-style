@@ -1,10 +1,12 @@
-import { GET_CATALOG, GET_ELABORATION, GET_SEMI_FINISHED, GET_STOCK } from "../types"
+import { refType } from "@mui/utils"
+import { GET_CATALOG, GET_ELABORATION, GET_SEMI_FINISHED, GET_STOCK, GET_CATALOG_ID } from "../types"
 
 const initialState = {
     semiFinished: {},
     elaboration: {},
     catalog: {},
     stock: {},
+    catalogId: {},
 }
 
 export const productionReducer = (state = initialState, action) => {
@@ -17,6 +19,8 @@ export const productionReducer = (state = initialState, action) => {
             return { ...state, catalog: action.payload }
         case GET_STOCK:
             return { ...state, stock: action.payload }
+        case GET_CATALOG_ID: 
+            return {...state, catalogId: action.payload}
         default:
             return state
     }

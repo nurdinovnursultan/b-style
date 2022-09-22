@@ -106,6 +106,7 @@ const ProductionPage = () => {
             </table>
           </section>
         </div>
+        <p></p>
         <div className="block3">
           <Pagination total={totalCount} perPage={totalPerPage} />
         </div>

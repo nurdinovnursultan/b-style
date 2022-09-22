@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountries } from '../../redux/actions/productionAction';
+import { Link } from 'react-router-dom';
 
 const SemiFinishedTable = ({ data }) => {
+    const dispatch = useDispatch()
+    const countries = useSelector(state => {
+        const { productionReducer } = state
+        return productionReducer.countries
+    })
+
+    useEffect(() => {
+        dispatch(getCountries())
+    }, [])
+
+    const getCountriesName = (countryID) => {
+        if (countries) {
+            let currentCountry = countries.results.filter(item => item.id === countryID)
+            return currentCountry[0].title
+        } else {
+            return
+        }
+    }
+
     const getTotalRest = () => {
         let total = 0
         data.forEach(item => total += item.quantity)
@@ -24,14 +47,19 @@ const SemiFinishedTable = ({ data }) => {
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.title}</td>
-                            <td>{item.country}</td>
+                            <td>{getCountriesName(item.country)}</td>
                             <td>{item.date}</td>
                             <td>{item.quantity}</td>
+                            <td align="center">
+                                <Link to={`/semifinished/${item.id}`}>
+                                    <ArrowForwardIcon fontSize="small" />
+                                </Link>
+                            </td>
                         </tr>)) : null
                 }
                 <tr>
-                    <th>Итого</th>
-                    <th>{data ? getTotalRest() : 0}</th>
+                    <td colSpan="4" align="right">Итого</td>
+                    <td colSpan="2">{data ? getTotalRest() : 0}</td>
                 </tr>
             </tbody>
         </table>

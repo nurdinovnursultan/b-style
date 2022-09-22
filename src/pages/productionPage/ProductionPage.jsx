@@ -8,6 +8,7 @@ const ProductionPage = () => {
   const product = [
     {
       model: "zzzz",
+      name : "wwwwww",
       data: "11.1.1.",
       id: Math.random(),
     },
@@ -106,7 +107,7 @@ const ProductionPage = () => {
             </table>
           </section>
         </div>
-        <p></p>
+        
         <div className="block3">
           <Pagination total={totalCount} perPage={totalPerPage} />
         </div>

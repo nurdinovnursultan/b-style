@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CatalogTable = ({ data }) => {
+
     return (
         <table>
             <thead>
@@ -16,13 +17,14 @@ const CatalogTable = ({ data }) => {
             <tbody>
                 {
                     data ? (data.map((item, index) =>
-                        <tr>
+                        <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.model}</td>
                             <td>{item.color}</td>
                             <td><img src={item.picture} alt="#" /></td>
                             <td>{item.size_from}-{item.size_to}</td>
                             <td>{item.articul}</td>
+                            <td>----</td>
                         </tr>
                     )) : null
                 }

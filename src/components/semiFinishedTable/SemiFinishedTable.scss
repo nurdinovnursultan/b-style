@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+
+    thead {
+        font-size: 16px;
+        font-weight: 700;
+
+        tr {
+            height: 40px;
+        }
+
+        td {
+            padding: 5px;
+        }
+    }
+
+    tbody {
+        font-size: 14px;
+        font-weight: 500;
+
+        tr {
+            height: 40px;
+
+            &:nth-child(odd) {
+                background: #f2f2f2;
+            }
+        }
+
+        td {
+            height: 40px;
+            padding: 5px;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+}

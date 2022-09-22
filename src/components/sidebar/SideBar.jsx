@@ -8,7 +8,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PeopleIcon from '@mui/icons-material/People';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -18,61 +18,60 @@ const theme = createTheme({
     }
 })
 
-const SideBar = () => {
-    const [sideBar, setSideBar] = useState(true)
-
+const SideBar = ({ status, setSidebar }) => {
     const sidebar = [
         {
-            name: "Выработка",
-            path: "/production",
+            name: "Полуфабрикаты",
+            path: "/semifinished",
             icon: <AddCircleIcon fontSize="large" />
         }, {
-            name: "Модель",
-            path: "/models",
+            name: "Производство",
+            path: "/elaboration",
             icon: <DashboardIcon fontSize="large" />
         }, {
-            name: "Вид моделей",
-            path: "/types",
+            name: "Каталог",
+            path: "/catalog",
             icon: <DashboardCustomizeIcon fontSize="large" />
         }, {
             name: "Сотрудники",
             path: "/employees",
             icon: <PeopleIcon fontSize="large" />
         }, {
-            name: "Выработка свод",
-            path: "/consolidated",
+            name: "Склад",
+            path: "/stock",
             icon: <InventoryIcon fontSize="large" />
         }, {
-            name: "ЗП сдельная",
+            name: "Зарплата",
             path: "/salary",
             icon: <AttachMoneyIcon fontSize="large" />
         }
     ]
 
-    const [current, setCurrent] = useState(0)
+    const location = useLocation()
+    const [current, setCurrent] = useState(location.pathname)
 
     return (
-        <div className={sideBar ? "side-bar" : "side-bar-close"}>
+        <div className={status ? "side-bar" : "side-bar-close"}>
             <div className="side-bar-header">
                 <ThemeProvider theme={theme}>
-                    <IconButton onClick={() => setSideBar(!sideBar)}>
+                    <IconButton onClick={() => setSidebar(!status)}>
                         <MenuIcon fontSize='large' color='warning' />
                     </IconButton>
                 </ThemeProvider>
             </div>
             <ul>
-            <div className='side-bar-links'>
-                {
-                    sidebar.map((item, index) => <Link to={item.path} key={index}
-                        className={current === index ? 'current-link' : 'default-link'}
-                        onClick={() => setCurrent(index)}>
-                        {
-                            sideBar ? (<div className="link-icons">{item.icon}<p>{item.name}</p></div>) :
-                                (<div className="link-icons">{item.icon}</div>)
-                        }
-                    </Link>)
-                }
-            </div>
+                <div className='side-bar-links'>
+                    {
+                        sidebar.map((item, index) => <Link to={item.path} key={index}
+                            className={current === item.path ? 'current-link' : 'default-link'}
+                            onClick={() => setCurrent(item.path)}>
+                            {
+                                status ? (<div className="link-icons">{item.icon}<p>{item.name}</p></div>) :
+                                    (<div className="link-icons">{item.icon}</div>)
+                            }
+                        </Link>)
+                    }
+                </div>
             </ul>
         </div>
     );

@@ -1,0 +1,23 @@
+.content__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 20px auto;
+
+    button {
+        width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        background: #326789;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+.content__body {
+    width: 90%;
+    margin: 0 auto;
+}

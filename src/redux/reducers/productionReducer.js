@@ -1,19 +1,5 @@
-import {
-  GET_CATALOG,
-  GET_ELABORATION,
-  GET_SEMI_FINISHED,
-  GET_STOCK,
-} from "../types";
+import { GET_CATALOG, GET_ELABORATION, GET_SEMI_FINISHED, GET_STOCK, GET_CATALOG_ID, GET_COUNTRIES, GET_SEMI_FINISHED_ID } from "../types"
 
-import {
-  GET_CATALOG,
-  GET_ELABORATION,
-  GET_SEMI_FINISHED,
-  GET_STOCK,
-  GET_CATALOG_ID,
-  GET_COUNTRIES,
-  GET_SEMI_FINISHED_ID,
-} from "../types";
 
 const initialState = {
   semiFinished: {},

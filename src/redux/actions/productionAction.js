@@ -79,3 +79,14 @@ export function getStock() {
         })
     }
 }
+
+export function postCatalog(obj) {
+    return async (dispatch) => {
+        const { data } = await axios.post(catalogAPI, obj)
+        dispatch({
+            type: GET_CATALOG,
+            payload: data
+        })
+    }
+}
+

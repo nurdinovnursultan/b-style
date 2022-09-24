@@ -29,6 +29,9 @@
 .modal .modal__body .modal__save-delete button:nth-child(2) {
   background: #E65C4F;
 }
+.modal .modal__body .btn-bush {
+  background-color: #ccc;
+}
 .modal .modal__body input {
   width: 100%;
   height: 35px;

@@ -30,7 +30,7 @@ const SemiFinishedDetails = () => {
                 <input type="number" name="quantity" value={semiFinished.quantity} />
                 <select name="country">
                     {
-                        countries.results.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
+                        countries.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
                     }
                 </select>
                 <div className="modal__save-delete">

@@ -29,7 +29,7 @@ const StockPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <StockTable data={stock.results} />
+        <StockTable data={stock} />
         <Pagination total={stock.count} perPage={limit} />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}

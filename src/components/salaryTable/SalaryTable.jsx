@@ -18,7 +18,7 @@ const SalaryTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.lenght > 0 ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{item.date}</td>
                             <td>{item.total_quantity}</td>

@@ -16,7 +16,7 @@ const CatalogTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.length > 0 ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.model}</td>

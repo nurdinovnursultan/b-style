@@ -22,7 +22,7 @@ const SalaryPage = ({ status }) => {
         <button>Добавить</button>
       </div>
       <div className="content__body">
-        <SalaryTable data={salary.results} />
+        <SalaryTable data={salary} />
         <Pagination total={salary.count} perPage={10} />
       </div>
     </div>

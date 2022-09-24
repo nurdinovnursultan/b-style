@@ -17,7 +17,7 @@ const SemiFinishedTable = ({ data }) => {
 
     const getCountriesName = (countryID) => {
         if (countries) {
-            let currentCountry = countries.results.filter(item => item.id === countryID)
+            let currentCountry = countries.filter(item => item.id === countryID)
             return currentCountry[0].title
         } else {
             return
@@ -25,8 +25,8 @@ const SemiFinishedTable = ({ data }) => {
     }
 
     const getTotalRest = () => {
-        let total = 0
-        data.forEach(item => total += item.quantity)
+        let total = 0;
+        Array.from(data).forEach(item => total += item.quantity)
         return total
     }
 
@@ -43,7 +43,7 @@ const SemiFinishedTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.lenght > 0 ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.title}</td>

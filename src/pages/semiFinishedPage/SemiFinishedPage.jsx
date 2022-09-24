@@ -27,8 +27,8 @@ const SemiFinishedPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <SemiFinishedTable data={semiFinished.results} />
-        <Pagination total={semiFinished.count} perPage={10} />
+        <SemiFinishedTable data={semiFinished} />
+        <Pagination total={semiFinished.country} perPage={10} />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}
       <Outlet />

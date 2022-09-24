@@ -29,7 +29,7 @@ const Modal = ({ close, path }) => {
             data: [
                 <select name="catalog">
                     {
-                        catalog.results.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
                     }
                 </select>,
                 <input type="number" name="pairs_shoes" placeholder="Введите количество пар" />,
@@ -42,7 +42,7 @@ const Modal = ({ close, path }) => {
                 <input type="number" name="quantity" placeholder="Введите количество" />,
                 <select name="country">
                     {
-                        countries.results.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
+                        countries.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
                     }
                 </select>
             ]
@@ -53,7 +53,7 @@ const Modal = ({ close, path }) => {
                 <input type="date" name="date" />,
                 <select name="catalog">
                     {
-                        catalog.results.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
                     }
                 </select>
             ]
@@ -74,7 +74,7 @@ const Modal = ({ close, path }) => {
         <div className="modal">
             <div className="modal__body">
                 {
-                    currentModalData[0].data.map((item, index) => <div key={index}>{item}</div>)
+                    currentModalData[0].map((item, index) => <div key={index}>{item}</div>)
                 }
                 <button>Отправить</button>
             </div>

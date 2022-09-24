@@ -15,7 +15,7 @@ const EmployeesTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.length > 0 ? data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.full_name}</td>
@@ -24,7 +24,7 @@ const EmployeesTable = ({ data }) => {
                             <td>{item.email}</td>
                             <td>{item.date_joined}</td>
                         </tr>
-                    )) : null
+                    ) : null
                 }
             </tbody>
         </table>

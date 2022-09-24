@@ -12,6 +12,16 @@ export function getWorkers() {
     }
 }
 
+export function postWorkers(obj) {
+    return async (dispatch) => {
+        const { data } = await axios.post(workersAPI, obj)
+        dispatch({
+            type: GET_WORKERS,
+            payload: data
+        })
+    }
+}
+
 export function getTabelWorkers() {
     return async (dispatch) => {
         const { data } = await axios(tabelWorkersAPI)

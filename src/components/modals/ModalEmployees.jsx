@@ -40,7 +40,7 @@ const ModalEmployess = ({ close}) => {
             </div>
             <div className='modal__close'>
                 <IconButton onClick={() => close(false)}>
-                    <CloseIcon fontSize='large' />
+                    <CloseIcon fontSize="large" />
                 </IconButton>
             </div>
         </div>

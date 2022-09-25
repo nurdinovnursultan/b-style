@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
+import ModalStock from '../../components/modals/ModalStock';
 import Pagination from "../../components/pagination/Pagination";
 import StockTable from '../../components/stockTable/StockTable';
 import { getStock } from '../../redux/actions/productionAction';
@@ -32,7 +33,8 @@ const StockPage = ({ status }) => {
         <StockTable data={stock} />
         <Pagination total={stock.count} perPage={limit} />
       </div>
-      {modal ? <Modal close={setModal} path={location.pathname} /> : null}
+      {modal ? <ModalStock close={setModal} path={location.pathname} /> : null} 
+    
     </div>
   );
 };

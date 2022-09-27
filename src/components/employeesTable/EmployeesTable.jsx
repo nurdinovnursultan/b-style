@@ -18,22 +18,23 @@ const EmployeesTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data.length ? (data.map((item, index) =>
-                        <tr key={item.id}>
-                            <td>{index + 1}</td>
-                            <td>{item.full_name}</td>
-                            <td><img src={item.photo} alt="#" /></td>
-                            <td>{item.phone}</td>
-                            <td>{item.email}</td>
-                            <td>{item.job_title}</td>
-                            <td>{item.date_joined}</td>
-                            <td align="center">
-                                <Link to={`/employees/${item.id}`}>
-                                    <ArrowForwardIcon fontSize="small" />
-                                </Link>
-                            </td>
+                    data.length ? (
+                        data.map((item, index) =>
+                            <tr key={item.id}>
+                                <td>{index + 1}</td>
+                                <td>{item.full_name}</td>
+                                <td><img src={item.photo} alt="#" /></td>
+                                <td>{item.phone}</td>
+                                <td>{item.email}</td>
+                                <td>{item.job_title}</td>
+                                <td>{item.date_joined}</td>
+                                <td align="center">
+                                    <Link to={`/employees/${item.id}`}>
+                                        <ArrowForwardIcon fontSize="small" />
+                                    </Link>
+                                </td>
 
-                        </tr>
+                            </tr>)
                     ) : null
                 }
             </tbody>

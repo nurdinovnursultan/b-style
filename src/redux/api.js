@@ -7,4 +7,4 @@ export const calendarAPI = "https://b-style-app.herokuapp.com/api/calendar/";
 export const dailyDiaryAPI = "https://b-style-app.herokuapp.com/api/daily-diary/";
 export const workersAPI = "https://b-style-app.herokuapp.com/api/workers/";
 export const tabelWorkersAPI = "https://b-style-app.herokuapp.com/api/tabel-workers/";
-export const salesWorkersAPI = "https://b-style-app.herokuapp.com/api/sales-workers/";
+export const salesJournalAPI = "https://b-style-app.herokuapp.com/api/sales-journal/";

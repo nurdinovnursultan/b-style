@@ -2,8 +2,19 @@ import React from 'react';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const Modal = ({ close, path }) => {
+    const [inputs, setInputs] = useState({})
+
+    const handleInputs = (e) => {
+        let newObject = {
+            ...inputs,
+            [e.target.name]: e.target.value
+        }
+        setInputs(newObject)
+    }
+
     const countries = useSelector(state => {
         const { productionReducer } = state
         return productionReducer.countries
@@ -14,56 +25,74 @@ const Modal = ({ close, path }) => {
         return productionReducer.catalog
     })
 
+    const employees = useSelector(state => {
+        const { workersReducer } = state
+        return workersReducer.workers
+    })
+
     const modalData = [
         {
             path: '/catalog',
             data: [
-                <input type="text" name="model" placeholder="Введите модель" />,
-                <input type="text" name="color" placeholder="Введите цвет" />,
-                <input type="number" name="size_from" placeholder="Введите размер от" />,
-                <input type="number" name="size_to" placeholder="Введите размер до" />,
-                <input type="text" name="articul" placeholder="Введите артикул" />
+                <input type="text" name="model" placeholder="Введите модель" onChange={handleInputs} />,
+                <input type="text" name="color" placeholder="Введите цвет" onChange={handleInputs} />,
+                <input type="number" name="size_from" placeholder="Введите размер от" onChange={handleInputs} />,
+                <input type="number" name="size_to" placeholder="Введите размер до" onChange={handleInputs} />,
             ]
         }, {
-            path: '/sales-workers',
+            path: '/sales',
             data: [
-                <select name="catalog">
+                <select name="worker" onChange={handleInputs}>
                     {
-                        catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        employees.length ? (
+                            employees.map(item => <option key={item.id} value={item.id}>{item.full_name}</option>)
+                        ) : null
                     }
                 </select>,
-                <input type="number" name="pairs_shoes" placeholder="Введите количество пар" />,
-                <input type="number" name="price" placeholder="Введите цену" />
+                <select name="catalog" onChange={handleInputs}>
+                    {
+                        catalog.length ? (
+                            catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        ) : null
+                    }
+                </select>,
+                <input type="number" name="pairs_shoes" placeholder="Введите количество пар" onChange={handleInputs} />,
+                <input type="number" name="price" placeholder="Введите цену" onChange={handleInputs} />
             ]
         }, {
             path: '/semifinished',
             data: [
-                <input type="text" name="title" placeholder="Введите название" />,
-                <input type="number" name="quantity" placeholder="Введите количество" />,
-                <select name="country">
+                <input type="text" name="title" placeholder="Введите название" onChange={handleInputs} />,
+                <input type="number" name="quantity" placeholder="Введите количество" onChange={handleInputs} />,
+                <select name="country" onChange={handleInputs}>
                     {
-                        countries.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
+                        countries.length ? (
+                            countries.map(item => <option key={item.id} value={item.id}>{item.title}</option>)
+                        ) : null
                     }
                 </select>
             ]
         }, {
             path: '/stock',
             data: [
-                <input type="number" name="quantity" placeholder="Введите количество" />,
-                <input type="date" name="date" />,
-                <select name="catalog">
+                <input type="number" name="quantity" placeholder="Введите количество" onChange={handleInputs} />,
+                <input type="date" name="date" onChange={handleInputs} />,
+                <select name="catalog" onChange={handleInputs}>
                     {
-                        catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        catalog.length ? (
+                            catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        ) : null
                     }
                 </select>
             ]
         }, {
             path: '/employees',
             data: [
-                <input type="text" name="full_name" placeholder="Введите ФИО" />,
-                <input type="number" name="phone" placeholder="Введите телефон" />,
-                <input type="email" name="email" placeholder="Введите почту" />,
-                <input type="date" name="date_joined" placeholder="Введите дату" />
+                <input type="text" name="full_name" placeholder="Введите ФИО" onChange={handleInputs} />,
+                <input type="text" name="phone" placeholder="Введите телефон" onChange={handleInputs} />,
+                <input type="email" name="email" placeholder="Введите почту" onChange={handleInputs} />,
+                <input type="text" name="job_title" placeholder="Введите должность" onChange={handleInputs} />,
+                <input type="date" name="date_joined" placeholder="Введите дату" onChange={handleInputs} />
             ]
         }
     ]
@@ -73,10 +102,13 @@ const Modal = ({ close, path }) => {
     return (
         <div className="modal">
             <div className="modal__body">
-                {
-                    currentModalData[0].map((item, index) => <div key={index}>{item}</div>)
-                }
-                <button>Отправить</button>
+                <form onSubmit={console.log(inputs)}>
+                    {
+                        currentModalData[0].data.map((item, index) => <div key={index}>{item}</div>)
+                    }
+                    <button>Отправить</button>
+                </form>
+
             </div>
             <div className='modal__close'>
                 <IconButton onClick={() => close(false)}>

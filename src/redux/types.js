@@ -9,4 +9,5 @@ export const GET_STOCK_ID = 'GET_STOCK_ID';
 export const GET_WORKERS = 'GET_WORKERS';
 export const GET_WORKER_ID = 'GET_WORKER_ID';
 export const GET_TABEL_WORKERS = 'GET_TABEL_WORKERS';
-export const GET_DAILY_DIARY = 'GET_DAILY_DIARY';
+export const GET_SALES_JOURNAL = 'GET_SALES_JOURNAL';
+export const GET_SALES_ITEM = 'GET_SALES_ITEM';

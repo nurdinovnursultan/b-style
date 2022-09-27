@@ -23,7 +23,7 @@ const ElaborationPage = ({ status }) => {
       </div>
       <div className="content__body">
         <ElaborationTable data={elaboration} />
-        <Pagination total={elaboration.count} perPage={10} />
+        <Pagination total={elaboration.length} perPage={10} />
       </div>
     </div>
   )

@@ -28,7 +28,7 @@ const SemiFinishedPage = ({ status }) => {
       </div>
       <div className="content__body">
         <SemiFinishedTable data={semiFinished} />
-        <Pagination total={semiFinished.country} perPage={10} />
+        <Pagination total={semiFinished.length} perPage={10} />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}
       <Outlet />

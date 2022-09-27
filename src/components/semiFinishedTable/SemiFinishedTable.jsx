@@ -16,12 +16,8 @@ const SemiFinishedTable = ({ data }) => {
     }, [])
 
     const getCountriesName = (countryID) => {
-        if (countries) {
-            let currentCountry = countries.filter(item => item.id === countryID)
-            return currentCountry[0].title
-        } else {
-            return
-        }
+        let currentCountry = countries.filter(item => item.id === countryID)
+        return currentCountry[0].title
     }
 
     const getTotalRest = () => {
@@ -43,11 +39,11 @@ const SemiFinishedTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data.lenght > 0 ? (data.map((item, index) =>
+                    data.length ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.title}</td>
-                            <td>{getCountriesName(item.country)}</td>
+                            <td>{countries.length ? getCountriesName(item.country) : ''}</td>
                             <td>{item.date}</td>
                             <td>{item.quantity}</td>
                             <td align="center">
@@ -59,7 +55,7 @@ const SemiFinishedTable = ({ data }) => {
                 }
                 <tr>
                     <td colSpan="4" align="right">Итого</td>
-                    <td colSpan="2">{data ? getTotalRest() : 0}</td>
+                    <td colSpan="2">{data.length ? getTotalRest() : 0}</td>
                 </tr>
             </tbody>
         </table>

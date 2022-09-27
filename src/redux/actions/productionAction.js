@@ -7,7 +7,8 @@ import {
     GET_ELABORATION,
     GET_CATALOG,
     GET_CATALOG_ID,
-    GET_STOCK
+    GET_STOCK,
+    GET_STOCK_ID
 } from "../types"
 
 export function getSemiFinished() {
@@ -80,23 +81,12 @@ export function getStock() {
     }
 }
 
-export function postStock(obj) {
+export function getStockItem(id) {
     return async (dispatch) => {
-        const { data } = await axios.post(stockAPI,obj)
+        const { data } = await axios(`${stockAPI}${id}/`)
         dispatch({
-            type: GET_STOCK,
+            type: GET_STOCK_ID,
             payload: data
         })
     }
 }
-
-export function postCatalog(obj) {
-    return async (dispatch) => {
-        const { data } = await axios.post(catalogAPI, obj)
-        dispatch({
-            type: GET_CATALOG,
-            payload: data
-        })
-    }
-}
-

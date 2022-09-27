@@ -21,16 +21,19 @@
         .modal__save-delete {
             display: flex;
             justify-content: space-between;
-
+            
             button {
                 width: 140px;
-
+                
                 &:nth-child(2) {
                     background: #E65C4F;
                 }
             }
         }
-
+        
+        .btn-bush {
+            background-color: #ccc;
+        }
         input {
             width: 100%;
             height: 35px;

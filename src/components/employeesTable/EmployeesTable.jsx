@@ -34,7 +34,7 @@ const EmployeesTable = ({ data }) => {
                             </td>
 
                         </tr>
-                    )) : null
+                    ) : null
                 }
             </tbody>
         </table>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getWorkers } from '../../redux/actions/staffAction';
 import { Outlet, useLocation } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
+import ModalEmployess from '../../components/modals/ModalEmployees';
 
 const EmployeesPage = ({ status }) => {
   const [modal, setModal] = useState(false);

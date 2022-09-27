@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
+import ModalStock from '../../components/modals/ModalStock';
 import Pagination from "../../components/pagination/Pagination";
 import StockTable from '../../components/stockTable/StockTable';
 import { getStock } from '../../redux/actions/productionAction';

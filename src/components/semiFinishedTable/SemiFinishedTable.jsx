@@ -21,8 +21,8 @@ const SemiFinishedTable = ({ data }) => {
     }
 
     const getTotalRest = () => {
-        let total = 0
-        data.forEach(item => total += item.quantity)
+        let total = 0;
+        Array.from(data).forEach(item => total += item.quantity)
         return total
     }
 

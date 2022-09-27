@@ -108,6 +108,7 @@ const Modal = ({ close, path }) => {
                     }
                     <button>Отправить</button>
                 </form>
+
             </div>
             <div className='modal__close'>
                 <IconButton onClick={() => close(false)}>

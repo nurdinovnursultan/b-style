@@ -1,45 +1,47 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { getSemiFinishedId } from '../../redux/actions/productionAction';
-import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
+import { Link, useParams } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
+import { useDispatch, useSelector } from 'react-redux';
+import { getStockItem } from '../../redux/actions/productionAction';
 
-const SemiFinishedDetails = () => {
+const StockItem = () => {
     const dispatch = useDispatch()
-    const semiFinished = useSelector(state => {
+    const stockItem = useSelector(state => {
         const { productionReducer } = state
-        return productionReducer.semiFinishedID
+        return productionReducer.stockItem
     })
 
-    const countries = useSelector(state => {
+    const catalog = useSelector(state => {
         const { productionReducer } = state
-        return productionReducer.countries
+        return productionReducer.catalog
     })
 
     const { id } = useParams()
 
     useEffect(() => {
-        dispatch(getSemiFinishedId(id))
+        dispatch(getStockItem(id))
     }, [id])
 
     return (
         <div className="modal">
             <div className="modal__body">
-                <input type="text" name="title" value={semiFinished.title} />
-                <input type="number" name="quantity" value={semiFinished.quantity} />
-                <select name="country">
+                <select name="catalog">
                     {
-                        countries.length ? countries.map(item => <option key={item.id} value={item.id}>{item.title}</option>) : null
+                        catalog.length ? (
+                            catalog.map(item => <option key={item.id} value={item.id}>{item.model}</option>)
+                        ) : null
                     }
                 </select>
+                <input type="number" name="quantity" value={stockItem.quantity} />
+                <input type="date" name="date" value={stockItem.date} />
                 <div className="modal__save-delete">
                     <button>Сохранить</button>
                     <button>Удалить</button>
                 </div>
             </div>
             <div className="modal__close">
-                <Link to="/semifinished">
+                <Link to="/stock">
                     <IconButton>
                         <CloseIcon fontSize="large" />
                     </IconButton>
@@ -49,4 +51,4 @@ const SemiFinishedDetails = () => {
     );
 };
 
-export default SemiFinishedDetails;
+export default StockItem;

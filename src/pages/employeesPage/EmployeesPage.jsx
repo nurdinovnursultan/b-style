@@ -3,7 +3,7 @@ import Pagination from "../../components/pagination/Pagination";
 import EmployeesTable from '../../components/employeesTable/EmployeesTable';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWorkers } from '../../redux/actions/staffAction';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
 
 const EmployeesPage = ({ status }) => {
@@ -27,10 +27,11 @@ const EmployeesPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <EmployeesTable data={workers.results} />
+        <EmployeesTable data={workers} />
         <Pagination />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}
+      <Outlet />
     </div>
   )
 };

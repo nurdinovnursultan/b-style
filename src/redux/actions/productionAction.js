@@ -7,7 +7,8 @@ import {
     GET_ELABORATION,
     GET_CATALOG,
     GET_CATALOG_ID,
-    GET_STOCK
+    GET_STOCK,
+    GET_STOCK_ID
 } from "../types"
 
 export function getSemiFinished() {
@@ -75,6 +76,16 @@ export function getStock() {
         const { data } = await axios(stockAPI)
         dispatch({
             type: GET_STOCK,
+            payload: data
+        })
+    }
+}
+
+export function getStockItem(id) {
+    return async (dispatch) => {
+        const { data } = await axios(`${stockAPI}${id}/`)
+        dispatch({
+            type: GET_STOCK_ID,
             payload: data
         })
     }

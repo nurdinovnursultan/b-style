@@ -1,4 +1,6 @@
 import React from 'react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from 'react-router-dom';
 
 const CatalogTable = ({ data }) => {
 
@@ -16,7 +18,7 @@ const CatalogTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.length ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{item.model}</td>
@@ -24,7 +26,11 @@ const CatalogTable = ({ data }) => {
                             <td><img src={item.picture} alt="#" /></td>
                             <td>{item.size_from}-{item.size_to}</td>
                             <td>{item.articul}</td>
-                            <td>----</td>
+                            <td align="center">
+                                <Link to={`/catalog/${item.id}`}>
+                                    <ArrowForwardIcon fontSize="small" />
+                                </Link>
+                            </td>
                         </tr>
                     )) : null
                 }

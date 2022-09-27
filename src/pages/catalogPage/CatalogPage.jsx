@@ -4,7 +4,7 @@ import CatalogTable from '../../components/catalogTable/CatalogTable';
 import Pagination from '../../components/pagination/Pagination';
 import { getCatalog } from '../../redux/actions/productionAction';
 import Modal from '../../components/modal/Modal';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 const CatalogPage = ({ status }) => {
   const dispatch = useDispatch()
@@ -27,10 +27,11 @@ const CatalogPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <CatalogTable data={catalog.results} />
-        <Pagination total={catalog.count} perPage={10} />
+        <CatalogTable data={catalog} />
+        <Pagination total={catalog.length} perPage={10} />
       </div>
       {modal ? (<Modal close={setModal} path={location.pathname} />) : null}
+      <Outlet />
     </div>
   )
 

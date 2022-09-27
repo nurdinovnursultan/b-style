@@ -35,9 +35,11 @@ const LoginPage = () => {
                     <p>Пожалуйста, введите свои учетные данные</p>
                 </div>
                 <div className="login-body-form">
-                    <input type="text" name="username" placeholder="Username" onChange={login} />
-                    <input type="password" name="password" placeholder="Password" onChange={login} />
-                    <button onClick={() => checkUser()}>SIGN IN</button>
+                    <form onSubmit={() => checkUser()}>
+                        <input type="text" name="username" placeholder="Username" onChange={login} />
+                        <input type="password" name="password" placeholder="Password" onChange={login} />
+                        <button>SIGN IN</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -22,8 +22,8 @@ const ElaborationPage = ({ status }) => {
         <button>Добавить</button>
       </div>
       <div className="content__body">
-        <ElaborationTable data={elaboration.results} />
-        <Pagination total={elaboration.count} perPage={10} />
+        <ElaborationTable data={elaboration} />
+        <Pagination total={elaboration.length} perPage={10} />
       </div>
     </div>
   )

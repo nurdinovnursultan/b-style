@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Modal from '../../components/modal/Modal';
 import Pagination from "../../components/pagination/Pagination";
 import StockTable from '../../components/stockTable/StockTable';
@@ -29,10 +29,11 @@ const StockPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <StockTable data={stock.results} />
-        <Pagination total={stock.count} perPage={limit} />
+        <StockTable data={stock} />
+        <Pagination total={stock.length} perPage={limit} />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}
+      <Outlet />
     </div>
   );
 };

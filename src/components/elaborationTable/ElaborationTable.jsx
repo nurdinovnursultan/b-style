@@ -8,8 +8,8 @@ const ElaborationTable = ({ data }) => {
     })
 
     const getSemiFinishedName = (semiFinishedID) => {
-        if (semiFinished) {
-            let currentSemiFinished = semiFinished.results.filter(item => item.id === semiFinishedID)
+        if (semiFinished.lenght) {
+            let currentSemiFinished = semiFinished.filter(item => item.id === semiFinishedID)
             return currentSemiFinished[0].title
         } else {
             return
@@ -34,7 +34,7 @@ const ElaborationTable = ({ data }) => {
             </thead>
             <tbody>
                 {
-                    data ? (data.map((item, index) =>
+                    data.length ? (data.map((item, index) =>
                         <tr key={item.id}>
                             <td>{index + 1}</td>
                             <td>{getSemiFinishedName(item.semifinished)}</td>

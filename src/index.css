@@ -1,11 +1,22 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap'); */
+/* @import url('./components/header/Header.css'); */
+/* @import url('./components/sidebar/SideBar.css'); */
+/* @import url('./components/pagination/Pagination.css');
+@import url('./pages/loginPage/LoginPage.css');
+@import url('./components/semiFinishedTable/SemiFinishedTable.css');
+@import url('./pages/semiFinishedPage/SemiFinishedPage.css');
+@import url('./components/modal/Modal.css'); */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('./components/header/Header.css');
 @import url('./components/sidebar/SideBar.css');
 @import url('./components/pagination/Pagination.css');
-@import url('./pages/loginPage/LoginPage.css');
+@import url('./pages/loginpage/LoginPage.css');
 @import url('./components/semiFinishedTable/SemiFinishedTable.css');
 @import url('./pages/semiFinishedPage/SemiFinishedPage.css');
 @import url('./components/modal/Modal.css');
+
+
 
 * {
   margin: 0;

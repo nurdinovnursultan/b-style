@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import CatalogTable from '../../components/catalogTable/CatalogTable';
-import Pagination from '../../components/pagination/Pagination';
-import { getCatalog } from '../../redux/actions/productionAction';
-import Modal from '../../components/modal/Modal';
-import { Outlet, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import CatalogTable from "../../components/catalogTable/CatalogTable";
+import Pagination from "../../components/pagination/Pagination";
+import { getCatalog } from "../../redux/actions/productionAction";
+import Modal from "../../components/modal/Modal";
+import { Outlet, useLocation } from "react-router-dom";
 
-const CatalogPage = ({ status }) => {
-  const dispatch = useDispatch()
-  const catalog = useSelector(state => {
-    const { productionReducer } = state
-    return productionReducer.catalog
-  })
+const CatalogPage = ({ status }) => { 
+  const dispatch = useDispatch();
+  const catalog = useSelector((state) => {
+    const { productionReducer } = state;
+    return productionReducer.catalog;
+  });
 
   useEffect(() => {
-    dispatch(getCatalog())
-  }, [])
+    dispatch(getCatalog());
+  }, []);
 
   const [modal, setModal] = useState(false);
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <div className={status ? "container" : "container__move"}>
@@ -27,14 +27,13 @@ const CatalogPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <CatalogTable data={catalog} />
+        <CatalogTable data={catalog.results} />
         <Pagination total={catalog.length} perPage={10} />
       </div>
-      {modal ? (<Modal close={setModal} path={location.pathname} />) : null}
+      {modal ? <Modal close={setModal} path={location.pathname} /> : null}
       <Outlet />
     </div>
-  )
-
+  );
 };
 
 export default CatalogPage;

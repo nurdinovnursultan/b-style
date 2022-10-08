@@ -19,7 +19,6 @@ const SemiFinishedPage = ({ status }) => {
   useEffect(() => {
     dispatch(getSemiFinished())
   }, [])
-
   return (
     <div className={status ? "container" : "container__move"}>
       <div className="content__header">
@@ -27,7 +26,7 @@ const SemiFinishedPage = ({ status }) => {
         <button onClick={() => setModal(true)}>Добавить</button>
       </div>
       <div className="content__body">
-        <SemiFinishedTable data={semiFinished} />
+        <SemiFinishedTable data={semiFinished.results} />
         <Pagination total={semiFinished.length} perPage={10} />
       </div>
       {modal ? <Modal close={setModal} path={location.pathname} /> : null}

@@ -15,6 +15,7 @@ import SalaryPage from "./pages/salaryPage/SalaryPage";
 import SalesPage from "./pages/salesPage/SalesPage";
 import SalesItem from "./components/salesItem/SalesItem";
 import SemiFinishedDetails from "./components/semiFinishedDetails/SemiFinishedDetails";
+import Auth from "./pages/authpage/Auth";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -26,6 +27,7 @@ function App() {
         <SideBar status={sidebar} setSidebar={setSidebar} />
         <Routes>
           <Route path="/" element={<LoginPage />} />
+          <Route path="auth" element={<Auth status={sidebar} />} />
           <Route
             path="semifinished/*"
             element={<SemiFinishedPage status={sidebar} />}
